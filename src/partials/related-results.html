@@ -1,0 +1,45 @@
+<p>{{searchResults.Search.length ? searchResults.Search.length : 0}} results found</p>
+<hr>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <td>
+            </td>
+            <td>
+                <a href="#" ng-click="sortType = 'Title'; sortReverse = !sortReverse" ">
+                    Title
+                    <span ng-show="sortType=='Title' " class="fa fa-caret-down "></span>
+                </a>
+            </td>
+            <td>
+                <a href="# " ng-click="sortType='Type' ; sortReverse=! sortReverse " "> Type
+                <span ng-show="sortType == 'Type'" class="fa fa-caret-down"></span>
+                </a>
+            </td>
+            <td>
+                <a href="#" ng-click="sortType = 'Year'; sortReverse = !sortReverse" ">
+                    Year
+                    <span ng-show="sortType=='Year' " class="fa fa-caret-down "></span>
+                </a>
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="x in searchResults.Search | orderBy:sortType:sortReverse ">
+            <td>
+                <image class="movie-poster " ng-src="{{x.Poster}} " />
+            </td>
+            <td>
+                <!--<a href=" " class="lightbox-trigger ">{{x.Title}}</a>-->
+                <button ng-lightbox='{"trigger ": "manual ", "element ": "lightbox "}'>{{x.Title}}</button>
+            </td>
+            <td>
+                {{x.Type}}
+            </td>
+            <td>
+                {{x.Year}}
+            </td>
+        </tr>
+    </tbody>
+</table>
