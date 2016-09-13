@@ -1,0 +1,11 @@
+node_modules/
+bower_components/
+coverage/
+.sass-cache/
+.idea/
+.tmp/
+dist/
+.vscode/
+.tmp/
+.bowerrc
+.yo-rc.json
