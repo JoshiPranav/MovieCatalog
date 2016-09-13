@@ -14,6 +14,11 @@
   
     $ gulp serve
   
+# Production Readiness
+ 
+    $ gulp build
+    
+This will be minify(both html and js), uglify and build the code to "dist" folder and then can be served from that location.
 
 # Approach: 
 AngularJS 1.5, HTML 5, CSS 3, Bootstrap
