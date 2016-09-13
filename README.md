@@ -16,11 +16,11 @@
   
 
 # Approach: 
-AngularJS 1.5, HTML 5, CSS 3, Bootstrap (development)
+AngularJS 1.5, HTML 5, CSS 3, Bootstrap
 
-Jasmine, Karma, Protractor (unit tests)
+Jasmine, Karma, Protractor
 
-Gulp, Bower, npm (task mgmt)
+Gulp, Bower, npm
 
 # Further improvements which I will actively pursue when time permits:
 -> More tests !!
