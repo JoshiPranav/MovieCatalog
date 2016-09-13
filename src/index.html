@@ -1,22 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
     <title>Movie Catalog</title>
-    <script src="js/angular.min.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/services/movie.search.service.js"></script>
-    <script src="js/controllers/movie.search.controller.js"></script>
-    <script src="js/directives/lightbox.directive.js"></script>
     <link rel="stylesheet" href="css/animate.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootswatch/3.2.0/sandstone/bootstrap.min.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="utf-8">
 </head>
-
 <body data-ng-app="App" data-ng-controller="MovieSearchController">
     <div class="container-fluid outerdiv">
 
@@ -38,26 +31,24 @@
                 <input type="text" ng-model="year" class="form-control" placeholder="Search Year" />
             </div>
             <div class="col-md-2">
-                <input type="button" value="Search" ng-click="search()"></input>
+                <input type="button" value="Search" class="btn btn-secondary" ng-click="search()"></input>
             </div>
         </div>
 
         <br>
 
-        <!--<div id="main-info" ng-include="'partials/main-info.html'" ng-show="search" class="lightbox"></div>-->
-
-        <div id="related-results" ng-include="'partials/related-results.html'" class="col-md-12 related-results" ng-show="postSearch"></div>
-        <!--<div class="lightbox" id="lightbox">
-            <h1>This is some content</h1>
-        </div>-->
-
-
+        <div id="related-results" ng-include="'partials/search-results.html'" class="col-md-12 search-results"></div>
     </div>
-    <button ng-click='toggleModal()'>Open Modal Dialog</button>
-    <modal-dialog show='modalShown' width='750px' height='60%'>
-        <p>Modal Content Goes here
-            <p>
-    </modal-dialog>
+
+    <script src="js/angular.min.js"></script>
+    <script src="js/ui-bootstrap-tpls-2.1.3.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/services/movie.service.js"></script>
+    <script src="js/controllers/movie.search.controller.js"></script>
+    <script src="js/controllers/movie.info.controller.js"></script>
+    <script src="js/filters/substring.filter.js"></script>
+    <script src="js/directives/showmore.directive.js"></script>
+    <script src="js/directives/rating.directive.js"></script>
 </body>
 
 </html>

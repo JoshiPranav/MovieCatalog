@@ -22,9 +22,19 @@ body {
     color: rgb(250, 250, 250);
 }
 
-.related-results {
+.search-results {
     -moz-animation-delay: 1.5s;
     -webkit-animation-delay: 1.5s;
+}
+
+.btn-link {
+    background: none!important;
+    border: none;
+    padding: 0!important;
+    font: inherit;
+    /*border is optional*/
+    border-bottom: 1px solid #444;
+    cursor: pointer;
 }
 
 .movie-poster {
@@ -56,95 +66,44 @@ body {
     margin-top: 15px;
 }
 
-.ng-modal-overlay {
-    /* A dark translucent div that covers the whole screen */
-    position: absolute;
-    z-index: 9999;
-    top: 0;
-    left: 0;
+.modal-dialog {
     width: 100%;
-    height: 100%;
-    background-color: #000000;
-    opacity: 0.8;
+    height: 80%;
+    margin: 0;
+    padding: 0;
 }
 
-.ng-modal-dialog {
-    /* A centered div above the overlay with a box shadow. */
-    z-index: 10000;
-    position: absolute;
-    width: 50%;
-    /* Default */
-    /* Center the dialog */
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
-    -moz-transform: translate(-50%, -50%);
-    background-color: #fff;
-    box-shadow: 4px 4px 80px #000;
+.modal-content {
+    height: auto;
+    min-height: 100%;
+    border-radius: 0;
 }
 
-.ng-modal-dialog-content {
-    padding: 10px;
-    text-align: left;
-}
-
-.ng-modal-close {
-    position: absolute;
-    top: 3px;
-    right: 5px;
-    padding: 5px;
+a.read-more,
+a.read-less {
     cursor: pointer;
-    font-size: 120%;
+    color: blue;
+}
+
+.star-rating {
+    margin: 0;
+    padding: 0;
+    display: inline-block
+}
+
+.star {
+    padding: 1px;
+    color: #ddd;
+    font-size: 20px;
+    text-shadow: .05em .05em #aaa;
+    list-style-type: none;
     display: inline-block;
-    font-weight: bold;
-    font-family: 'arial', 'sans-serif';
 }
 
-
-/*#overlay {
-    -webkit-transition: all .2s;
-    -moz-transition: all .2s;
-    -ms-transition: all .2s;
-    -o-transition: all .2s;
-    transition: all .2s;
-    height: 100%;
-    width: 100%;
-    display: inline-block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    background: black;
-    opacity: 0;
+.filled {
+    color: #fd0;
 }
 
-#overlay.overlay-active {
-    filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=80);
-    opacity: .8;
+.readonly .star.filled {
+    color: #666;
 }
-
-.lightbox {
-    border-radius: 6px;
-    background: white;
-    box-shadow: 0 0 16px rgba(0, 0, 0, .4);
-    position: absolute;
-    width: 500px;
-    height: 200px;
-    top: 0;
-    left: 50%;
-    margin-top: 10%;
-    margin-left: -250px;
-    z-index: 2;
-    opacity: 0;
-    display: none;
-}
-
-.lightbox.lightbox-active {
-    display: inline-block;
-    opacity: 1;
-}
-
-h1 {
-    text-align: center;
-}*/

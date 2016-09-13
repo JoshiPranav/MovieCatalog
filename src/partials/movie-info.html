@@ -1,0 +1,40 @@
+<div class="modal-body">
+
+    <br>
+    <div class="row">
+        <div class="col-md-4">
+            <image class="movie-poster " ng-src="{{movieDetails.Poster}} " />
+        </div>
+        <div class="col-md-8">
+            <h2 text-center>{{movieDetails.Title}}</h2>
+            <div class="row">
+                <span class="label label-primary">Released on:</span> {{ movieDetails.Released }} <br>
+            </div>
+            <div class="row">
+                <span class="label label-primary">Runnig Time:</span> {{ movieDetails.Runtime }} <br>
+            </div>
+            <div class="row">
+                <span class="label label-primary">Directors :</span> {{ movieDetails.Director }} <br>
+            </div>
+            <div class="row">
+                <span class="label label-primary">Actors :</span> {{ movieDetails.Actors }} <br>
+            </div>
+            <div class="row">
+                <span class="label label-primary">Genre :</span> {{ movieDetails.Genre }} <br>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <show-more text="movieDetails.Plot" limit="10"> </show-more>
+
+    <br>
+    <div class="row">
+        <div class="col-md-2"><strong>IMDb Rating: </strong> {{ movieDetails.imdbRating }}</div>
+        <div class="col-md-6">
+            <div star-rating ng-model="movieDetails.imdbRating" max="10" on-rating-select="rating.rateFunction(rating)"></div>
+        </div>
+    </div>
+
+</div>

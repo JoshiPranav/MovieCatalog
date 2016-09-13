@@ -1,27 +1,49 @@
 'use strict';
 
-angular.module('App')
-    .controller('MovieSearchController', ['$scope', 'MovieSearchService',
-        function($scope, $movieSearchService) {
+app.controller('MovieSearchController', ['$scope', 'MovieService', '$modal',
+    function($scope, $movieService, $modal) {
+
+        //private function. Init scope vars.
+        var init = function() {
             $scope.searchResults = [];
             $scope.title = '';
             $scope.year = '';
-            $scope.postSearch = false;
-
+            $scope.resultCount = 0;
             $scope.sortType = 'Title';
             $scope.sortReverse = false;
-            var pendingTask;
+        };
 
-            $scope.search = function() {
-                $movieSearchService.Search($scope.title, $scope.year).then(function(response) {
+        //search click - calls service
+        $scope.search = function() {
+            $scope.resultCount = 0;
+            $movieService.Search($scope.title, $scope.year).then(function(response) {
+                if (response && response.data && response.data.Search) {
                     $scope.searchResults = response.data;
-                    $scope.postSearch = true;
-                });
-            };
+                    $scope.resultCount = response.data.Search.length;
+                }
+            });
+        };
 
-            $scope.modalShown = false;
-            $scope.toggleModal = function() {
-                $scope.modalShown = !$scope.modalShown;
-            };
-        }
-    ]);
+        $scope.ShowDetails = function(imdbID) {
+            $movieService.Fetch(imdbID).then(function(response) {
+                if (response && response.data) {
+                    $scope.movie = response.data;
+                    var modalInstance = $modal.open({
+                        templateUrl: './partials/movie-info.html',
+                        controller: 'MovieInfoController',
+                        size: 'lg',
+                        resolve: {
+                            movieDetails: function() {
+                                return $scope.movie;
+                            }
+                        }
+                    });
+                }
+            });
+
+        };
+
+
+        init();
+    }
+]);
